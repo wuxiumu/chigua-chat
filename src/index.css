@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --color-wechat-bg: #ededed;
+  --color-wechat-green: #95ec69;
+  --color-wechat-bubble: #ffffff;
+  --color-wechat-input: #f7f7f7;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* 隐藏滚动条 */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* PC 模式滚动条 */
+.pc-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.pc-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.pc-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+.pc-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* 消息气泡小三角 */
+.bubble-left::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 14px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid white;
+}
+
+.bubble-right::before {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 14px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #95ec69;
+}
+
+/* 图片气泡 */
+.img-bubble img {
+  object-fit: cover;
+}
+
+/* ── Root 容器 ─────────────────────────── */
+#root {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 移动端限制最大宽度居中 */
+@media (max-width: 767px) {
+  #root {
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* PC 端全宽 */
+@media (min-width: 768px) {
+  body {
+    justify-content: stretch;
+    background: #f5f5f5;
+  }
+  #root {
+    max-width: 100%;
+    box-shadow: none;
+  }
+}
+
+/* 移动端 push 导航滑入动画 */
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.mobile-push-in {
+  animation: slideInRight 0.25s ease-out;
+}
+
+/* 头像占位符 */
+.avatar-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #07c160 0%, #06ad56 100%);
+  color: white;
+  font-weight: 500;
+}
