@@ -19,6 +19,32 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
+
+## 事实摘要（仓库现状）
+
+- **产品**：React + Vite + Tailwind 聊天 UI 演示壳（`src/ChatEngineApp.jsx` 等）。
+- **适合**：客服/社群聊天界面原型、白标换皮起点。
+- **不做**：默认不是完整 IM 中台（无强制后端）。
+
+## 快速开始
+
+```bash
+npm install
+npm run dev
+# 构建：npm run build
+```
+
+## 环境变量
+
+复制 `.env.example` → `.env`（当前演示可不配）。
+
+## 冒烟自检
+
+```bash
+bash scripts/smoke.sh
+# 或 npm run smoke
+```
+
 ## SEO 字段预留（产品页 HTML 统一生成时用）
 
 | 字段 | 用途 |

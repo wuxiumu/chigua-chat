@@ -4,3 +4,7 @@ node_modules
 dist
 public/data
 public/api
+.env
+.env.*
+!.env.example
+.DS_Store
